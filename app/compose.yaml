@@ -1,0 +1,14 @@
+services:
+  app-app:
+    build: .
+    ports:
+      - 8080:${PORT}
+    environment:
+      GREETING: ${GREETING}
+      STORAGE: ${STORAGE}
+      PORT: ${PORT}
+      DATA_FILE: ${DATA_FILE}
+    volumes:
+      - sqlite_data:/data
+volumes:
+  sqlite_data:
